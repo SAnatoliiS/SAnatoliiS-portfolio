@@ -1,4 +1,4 @@
-import Greeting from "../components/Greeting.jsx";
+import Main from "../components/Main.jsx";
 import { connect } from 'react-redux';
 
 // const mapStateToProps = state => {
@@ -8,4 +8,4 @@ import { connect } from 'react-redux';
 //   return props;
 // }
 
-export default connect()(Greeting);
+export default connect()(Main);
