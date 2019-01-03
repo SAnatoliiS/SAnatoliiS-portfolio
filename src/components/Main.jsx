@@ -3,7 +3,7 @@ import Header from './Header.jsx'
 import Description from '../containers/Description'
 import Controls from '../containers/Controls'
 import ItemList from '../containers/ItemList'
-import AddingItem from '../containers/AddingItem'
+import NewItem from '../containers/NewItem'
 import ChosenItem from '../containers/ChosenItem'
 
 export class Main extends Component {
@@ -14,7 +14,7 @@ export class Main extends Component {
         <Description />
         <Controls />
         <ItemList />
-        <AddingItem />
+        <NewItem />
         <ChosenItem />
       </div>
     )
