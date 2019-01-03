@@ -1,11 +1,16 @@
 import React from 'react'
 import Item from '../containers/Item'
 
-const ItemList = () => {
+const ItemList = ({ resetList, items }) => {
+  const onResetList = () => {
+    resetList();
+  }
   return (
     <div>
-      <button>reset</button>
-      <Item />
+      <button onClick={onResetList}>reset</button>
+      {
+        items.map(item => <Item key={item.id} item={item} />)
+      }
     </div>
   )
 }
