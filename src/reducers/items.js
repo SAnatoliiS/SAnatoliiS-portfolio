@@ -10,7 +10,7 @@ const items = handleActions({
   [actions.removeItem](state, { payload: removeItemId }) {
     return state.filter(({ id }) => id !== removeItemId)
   },
-  [actions.reset]() {
+  [actions.resetList]() {
     return itemsReducerDefaultState
   }
 }, itemsReducerDefaultState)

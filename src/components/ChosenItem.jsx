@@ -1,17 +1,20 @@
 import React from 'react'
+import Modal from 'react-modal'
 
 const ChosenItem = ({ chosenItem: { title, info }, unChoose }) => {
   const onUnChoose = () => {
     unChoose();
   }
   return (
-    !!title 
-      ? <div>
-          <h3>{title}</h3>
-          <p>{info}</p>
-          <button onClick={onUnChoose}>Okay</button>
-        </div>
-      : null
+    <Modal
+      isOpen={!!title}
+      onRequestClose={onUnChoose}
+    >
+      <h3>{title}</h3>
+      <p>{info}</p>
+      <button onClick={onUnChoose}>Okay</button>
+    </Modal>
+  
   )
 }
 

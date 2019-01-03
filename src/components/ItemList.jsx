@@ -7,7 +7,11 @@ const ItemList = ({ resetList, items }) => {
   }
   return (
     <div>
-      <button onClick={onResetList}>reset</button>
+      {
+        items.length > 0 
+          ? <button onClick={onResetList}>clear</button>
+          : null
+      }
       {
         items.map(item => <Item key={item.id} item={item} />)
       }
