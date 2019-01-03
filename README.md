@@ -1,6 +1,6 @@
-# SAnatoliiS-portfolio
+# Decision-maker
 
-## Hello.
-##### This project will show you my web development skills and experience.
+## Hello!
+##### This project will help you with making a difficult choise.
 
 Coming soon...

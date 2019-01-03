@@ -14,4 +14,5 @@ const ChosenItem = ({ chosenItem: { title, info }, unChoose }) => {
       : null
   )
 }
+
 export default ChosenItem;
