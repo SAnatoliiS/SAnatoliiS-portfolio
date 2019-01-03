@@ -1,12 +1,17 @@
 import React from 'react'
 
-const ChosenItem = () => {
+const ChosenItem = ({ chosenItem: { title, info }, unChoose }) => {
+  const onUnChoose = () => {
+    unChoose();
+  }
   return (
-    <div>
-      <h3>Chosen</h3>
-      <p>chosen one</p>
-      <button>Okay</button>
-    </div>
+    !!title 
+      ? <div>
+          <h3>{title}</h3>
+          <p>{info}</p>
+          <button onClick={onUnChoose}>Okay</button>
+        </div>
+      : null
   )
 }
 export default ChosenItem;

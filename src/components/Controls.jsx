@@ -1,9 +1,14 @@
 import React from 'react'
+import { sample } from 'lodash'
 
-const Controls = () => {
+const Controls = ({ items, chooseItem }) => {
+  const onChoose = () => {
+    const chosenItem = sample(items.map(item => item.id))
+    chooseItem(chosenItem)
+  }
   return (
     <div>
-      <button>CHOOSE</button>
+      <button onClick={onChoose}>CHOOSE</button>
       <button>ADD</button>
     </div>
   )
