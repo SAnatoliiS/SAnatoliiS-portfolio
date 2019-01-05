@@ -11,8 +11,16 @@ const Controls = ({ items, chooseItem, openNewItemModal }) => {
 	};
 	return (
 		<div>
-			<button onClick={onChoose}>CHOOSE</button>
-			<button onClick={onOpenAddModal}>ADD</button>
+			<button type="button" className="btn btn-primary" onClick={onChoose}>
+				CHOOSE
+			</button>
+			<button
+				type="button"
+				className="btn btn-primary"
+				onClick={onOpenAddModal}
+			>
+				ADD
+			</button>
 		</div>
 	);
 };

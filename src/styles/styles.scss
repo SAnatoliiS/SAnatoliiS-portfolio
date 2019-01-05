@@ -1,1 +1,6 @@
 @import '../../node_modules/bootstrap/scss/bootstrap';
+@import './base/settings';
+@import './base/base';
+@import './components/header';
+@import './components/main';
+@import './components/content-container';

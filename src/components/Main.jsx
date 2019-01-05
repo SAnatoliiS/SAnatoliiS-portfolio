@@ -10,12 +10,20 @@ export class Main extends Component {
 	render() {
 		return (
 			<div>
-				<Header />
-				<Description />
-				<Controls />
-				<ItemList />
-				<NewItem />
-				<ChosenItem />
+				<div className="header-container">
+					<div className="content-container">
+						<Header />
+					</div>
+				</div>
+				<div className="main">
+					<div className="content-container">
+						<Description />
+						<Controls />
+						<ItemList />
+						<NewItem />
+						<ChosenItem />
+					</div>
+				</div>
 			</div>
 		);
 	}
