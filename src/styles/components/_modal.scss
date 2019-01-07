@@ -51,11 +51,16 @@
 }
 
 .new-item-modal__title-field {
-	margin-bottom: $s-size;
 	background-color: lighten($grey, 15);
 }
 
+.new-item-modal__error {
+	color: red;
+	font-size: 14px;
+}
+
 .new-item-modal__info-field {
+	margin-top: $s-size;
 	background-color: lighten($grey, 15);
 }
 
