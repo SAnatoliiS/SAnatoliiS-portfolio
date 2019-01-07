@@ -1,0 +1,18 @@
+.description {
+	padding: $m-size;
+	margin-top: $m-size;
+	width: 30rem;
+	background-color: darken($grey, 3);
+}
+
+.desription-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.description__title {
+	color: darken($grey, 25);
+}
+
+.description__note {
+}

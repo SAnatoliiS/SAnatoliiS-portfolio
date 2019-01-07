@@ -1,0 +1,18 @@
+.item {
+	word-break: break-all;
+	background-color: darken($grey, 3);
+	display: flex;
+	justify-content: space-between;
+	padding: $s-size 0 $s-size $m-size;
+	border: 1px solid darken($grey, 10);
+	border-top: none;
+	font-size: $font-size-large;
+	button {
+		margin-right: $s-size;
+		min-width: 6rem;
+	}
+}
+
+.item-info {
+	margin-left: $m-size;
+}

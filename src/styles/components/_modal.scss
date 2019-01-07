@@ -1,0 +1,73 @@
+.ReactModalPortal > div {
+	opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+	opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+	opacity: 0;
+}
+
+.modal-common {
+	margin: 0 $s-size;
+	background: $grey;
+	width: 60rem;
+	outline: none;
+	color: darken($grey, 50);
+}
+
+.modal__body {
+	word-break: break-all;
+	display: flex;
+	flex-direction: column;
+	padding: $s-size $l-size;
+}
+
+.modal__header {
+	background-color: $blue;
+	color: $warm;
+	font-size: $font-size-xl;
+	padding: $s-size;
+	text-align: center;
+}
+
+.new-item-modal__fields {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: $s-size;
+}
+.modal__buttons {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.new-item-modal__title-field {
+	margin-bottom: $s-size;
+	background-color: lighten($grey, 15);
+}
+
+.new-item-modal__info-field {
+	background-color: lighten($grey, 15);
+}
+
+.chosen-modal__title {
+	font-size: $font-size-large;
+	text-align: center;
+}
+
+.chosen-modal__info {
+	text-align: center;
+}
+
+.modal-common--chosen {
+	max-width: 30rem;
+}

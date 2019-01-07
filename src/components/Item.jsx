@@ -1,13 +1,18 @@
 import React from 'react';
 
-const Item = ({ removeItem, item: { id: itemId, title } }) => {
+const Item = ({ removeItem, item: { id: itemId, title, info } }) => {
 	const onRemoveItem = id => () => {
 		removeItem(id);
 	};
 	return (
-		<div>
-			<p>{title}</p>
-			<button onClick={onRemoveItem(itemId)}>x</button>
+		<div className="item">
+			<div>
+				<p>{title}</p>
+				{info && <p className="blockquote item-info">{'- ' + info}</p>}
+			</div>
+			<button className="button button--link" onClick={onRemoveItem(itemId)}>
+				Remove
+			</button>
 		</div>
 	);
 };

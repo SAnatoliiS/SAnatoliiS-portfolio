@@ -6,10 +6,23 @@ const ChosenItem = ({ chosenItem: { title, info }, unChoose }) => {
 		unChoose();
 	};
 	return (
-		<Modal isOpen={!!title} onRequestClose={onUnChoose}>
-			<h3>{title}</h3>
-			<p>{info}</p>
-			<button onClick={onUnChoose}>Okay</button>
+		<Modal
+			className="modal-common modal-common--chosen"
+			isOpen={!!title}
+			onRequestClose={onUnChoose}
+		>
+			<div className="modal__header">Chosen option</div>
+			<div className="modal__body">
+				<h3 className="chosen-modal__title">{title}</h3>
+				{info ? (
+					<p className="blockquote chosen-modal__info">{`- ${info}`}</p>
+				) : null}
+				<div className="modal__buttons">
+					<button className="btn-primary button" onClick={onUnChoose}>
+						Okay
+					</button>
+				</div>
+			</div>
 		</Modal>
 	);
 };

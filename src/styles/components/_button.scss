@@ -1,0 +1,29 @@
+.button {
+	background: $blue;
+	color: $off-white;
+	font-size: $font-size-small;
+	display: inline-block;
+	line-height: 1;
+	padding: $s-size;
+	border-radius: 1rem;
+	border-bottom: 0.5rem solid darken($blue, 10%);
+	border-right: 0.5rem solid darken($blue, 10%);
+	border-top: 0.1rem solid lighten($blue, 50%);
+	border-left: 0.1rem solid lighten($blue, 50%);
+}
+
+.button:focus {
+	outline: none;
+}
+
+.flex__button {
+	width: 100%;
+	margin-left: $s-size;
+}
+
+.button--link {
+	background: none;
+	border: none;
+	color: darken($grey, 40);
+	padding: 0;
+}

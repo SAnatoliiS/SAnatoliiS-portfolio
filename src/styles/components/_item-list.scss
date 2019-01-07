@@ -1,0 +1,13 @@
+.item-list {
+}
+
+.item-list-header {
+	background-color: darken($grey, 10);
+	padding: $s-size $m-size;
+	display: flex;
+	justify-content: space-between;
+	color: darken($grey, 50);
+	font-weight: bold;
+	font-size: $font-size-large;
+	align-items: center;
+}

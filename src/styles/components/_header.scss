@@ -1,9 +1,20 @@
 .header {
 	color: $off-white;
 	padding: $s-size 0;
+	h1 {
+		font-size: 6rem;
+	}
 	p {
 		text-align: right;
 	}
 
 	border-bottom: 1px solid $black;
+}
+
+@media (max-width: $desktop-breakpoint) {
+	.header {
+		h1 {
+			font-size: 4rem;
+		}
+	}
 }

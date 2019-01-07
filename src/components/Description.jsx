@@ -1,10 +1,21 @@
 import React from 'react';
 
-const Description = () => {
+const Description = ({ items }) => {
 	return (
-		<div>
-			<p>First you need to add some options.</p>
-			<p>Add more options or click "Choose"</p>
+		<div className="desription-container">
+			<div className="description">
+				<p className="description__title">Note:</p>
+				{items.length === 0 ? (
+					<p className="description__note">
+						First you need to add some options
+					</p>
+				) : (
+					<div>
+						<p className="description__note">"ADD" - to add more options</p>
+						<p className="description__note">"CHOOSE" - to make desicion</p>
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };

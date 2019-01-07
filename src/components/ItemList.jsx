@@ -7,10 +7,19 @@ const ItemList = ({ resetList, items }) => {
 	};
 	return (
 		<div>
-			{items.length > 0 ? <button onClick={onResetList}>clear</button> : null}
-			{items.map(item => (
-				<Item key={item.id} item={item} />
-			))}
+			<div className="item-list-header">
+				<div>Your options</div>
+				{items.length > 0 ? (
+					<button className="button button--link" onClick={onResetList}>
+						Remove all
+					</button>
+				) : null}
+			</div>
+			<div className="item-list">
+				{items.map(item => (
+					<Item key={item.id} item={item} />
+				))}
+			</div>
 		</div>
 	);
 };

@@ -1,7 +1,9 @@
 import { handleActions } from 'redux-actions';
 import * as actions from '../actions/items';
 
-const itemsReducerDefaultState = [{ id: '0', title: 'Example Item' }];
+const itemsReducerDefaultState = [
+	{ id: '0', title: 'Example Item', info: 'Extra info about this item' }
+];
 
 const items = handleActions(
 	{

@@ -6,20 +6,22 @@ const Controls = ({ items, chooseItem, openNewItemModal }) => {
 		const chosenItem = sample(items.map(item => item.id));
 		chooseItem(chosenItem);
 	};
-	const onOpenAddModal = () => {
-		openNewItemModal();
-	};
 	return (
-		<div>
-			<button type="button" className="btn btn-primary" onClick={onChoose}>
-				CHOOSE
+		<div className="controls">
+			<button
+				type="button"
+				className="btn-primary button"
+				onClick={openNewItemModal}
+			>
+				ADD
 			</button>
 			<button
 				type="button"
-				className="btn btn-primary"
-				onClick={onOpenAddModal}
+				className="btn-primary button flex__button"
+				onClick={onChoose}
+				disabled={items.length === 0}
 			>
-				ADD
+				CHOOSE
 			</button>
 		</div>
 	);

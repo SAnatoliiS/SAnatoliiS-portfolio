@@ -19,22 +19,39 @@ const NewItem = ({
 		closeNewItemModal();
 	};
 	return (
-		<Modal isOpen={isNewItemModalOpen} onRequestClose={closeModal}>
-			<form onSubmit={handleSubmit(onAddItem)}>
-				<Field
-					name="title"
-					required
-					component="input"
-					placeholder="Title*"
-					type="text"
-				/>
-				<Field
-					name="info"
-					component="input"
-					placeholder="Additional Info"
-					type="text"
-				/>
-				<button type="submit">Add</button>
+		<Modal
+			isOpen={isNewItemModalOpen}
+			onRequestClose={closeModal}
+			contentLabel="What is your next option?"
+			className="modal-common"
+		>
+			<div className="modal__header">New option</div>
+			<form className="modal__body" onSubmit={handleSubmit(onAddItem)}>
+				<div className="new-item-modal__fields">
+					<div>Title*:</div>
+					<Field
+						className="new-item-modal__title-field"
+						name="title"
+						required
+						component="input"
+						type="text"
+					/>
+					<div>Additional Info (not required):</div>
+					<Field
+						className="new-item-modal__info-field"
+						name="info"
+						component="input"
+						type="text"
+					/>
+				</div>
+				<div className="modal__buttons">
+					<button className="btn-primary button" onClick={closeModal}>
+						Cancel
+					</button>
+					<button className="btn-primary button" type="submit">
+						Add
+					</button>
+				</div>
 			</form>
 		</Modal>
 	);
