@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { reducer as formReducer } from 'redux-form';
+import thunk from 'redux-thunk';
 import itemsReducer from '../reducers/items';
 import chosenReducer from '../reducers/chosen';
 import modalsReducer from '../reducers/modals';
-import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,6 +17,5 @@ export default () => {
 		}),
 		composeEnhancers(applyMiddleware(thunk))
 	);
-
 	return store;
 };

@@ -1,6 +1,10 @@
 const writeItemsToLocalStorage = items => {
-	const itemsAsString = JSON.stringify(items);
-	localStorage.setItem('items', itemsAsString);
+	try {
+		const itemsAsString = JSON.stringify(items);
+		localStorage.setItem('items', itemsAsString);
+	} catch (e) {
+		//Do nothing
+	}
 };
 
 export const readItemsFromLocalStorage = () => {
@@ -13,29 +17,17 @@ export const readItemsFromLocalStorage = () => {
 };
 
 export const addItemToLocalStorage = item => {
-	try {
-		const storageItems = readItemsFromLocalStorage();
-		// console.log('newItems = ', storageItems);
-		const newItems = storageItems ? [...storageItems, item] : [item];
-		writeItemsToLocalStorage(newItems);
-	} catch (e) {
-		//Do nothing
-	}
+	const storageItems = readItemsFromLocalStorage();
+	const newItems = storageItems ? [...storageItems, item] : [item];
+	writeItemsToLocalStorage(newItems);
 };
 
 export const removeItemFromLocalStorage = id => {
-	try {
-		const storageItems = readItemsFromLocalStorage();
-		const newItems = storageItems.filter(item => item.id !== id);
-		writeItemsToLocalStorage(newItems);
-	} catch (e) {
-		alert(e);
-	}
+	const storageItems = readItemsFromLocalStorage();
+	const newItems = storageItems.filter(item => item.id !== id);
+	writeItemsToLocalStorage(newItems);
 };
+
 export const resetItemsInLocalStorage = () => {
-	try {
-		writeItemsToLocalStorage([]);
-	} catch (e) {
-		alert(e);
-	}
+	writeItemsToLocalStorage([]);
 };
