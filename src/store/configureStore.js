@@ -3,6 +3,7 @@ import { reducer as formReducer } from 'redux-form';
 import itemsReducer from '../reducers/items';
 import chosenReducer from '../reducers/chosen';
 import modalsReducer from '../reducers/modals';
+import thunk from 'redux-thunk';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -14,7 +15,7 @@ export default () => {
 			chosenItemId: chosenReducer,
 			openModals: modalsReducer
 		}),
-		composeEnhancers()
+		composeEnhancers(applyMiddleware(thunk))
 	);
 
 	return store;

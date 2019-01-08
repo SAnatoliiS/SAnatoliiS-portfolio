@@ -1,9 +1,7 @@
 import { handleActions } from 'redux-actions';
 import * as actions from '../actions/items';
 
-const itemsReducerDefaultState = [
-	{ id: '0', title: 'Example Item', info: 'Extra info about this item' }
-];
+const itemsReducerDefaultState = [];
 
 const items = handleActions(
 	{
@@ -15,6 +13,9 @@ const items = handleActions(
 		},
 		[actions.resetList]() {
 			return itemsReducerDefaultState;
+		},
+		[actions.loadItems](state, { payload: items }) {
+			return items;
 		}
 	},
 	itemsReducerDefaultState
