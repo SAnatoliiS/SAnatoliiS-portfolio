@@ -1,5 +1,5 @@
 import React from 'react';
-import { reduxForm, Field } from 'redux-form';
+import { Form, reduxForm, Field } from 'redux-form';
 import Modal from 'react-modal';
 
 class NewItem extends React.Component {
@@ -20,10 +20,13 @@ class NewItem extends React.Component {
 			});
 		}
 	};
-	closeModal = () => {
-		this.setState({ error: null });
-		this.props.reset();
+	closeModal = e => {
+		e.preventDefault();
 		this.props.closeNewItemModal();
+		setTimeout(() => {
+			this.props.reset();
+			this.setState({ error: null });
+		}, 200);
 	};
 	render() {
 		const { isNewItemModalOpen, handleSubmit } = this.props;
@@ -33,15 +36,15 @@ class NewItem extends React.Component {
 				onRequestClose={this.closeModal}
 				contentLabel="What is your next option?"
 				className="modal-common"
+				closeTimeoutMS={200}
 			>
 				<div className="modal__header">New option</div>
-				<form className="modal__body" onSubmit={handleSubmit(this.onAddItem)}>
+				<Form className="modal__body" onSubmit={handleSubmit(this.onAddItem)}>
 					<div className="new-item-modal__fields">
 						<div>Title*:</div>
 						<Field
 							className="new-item-modal__title-field"
 							name="title"
-							required
 							component="input"
 							type="text"
 						/>
@@ -62,7 +65,7 @@ class NewItem extends React.Component {
 							Add
 						</button>
 					</div>
-				</form>
+				</Form>
 			</Modal>
 		);
 	}

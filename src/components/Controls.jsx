@@ -1,10 +1,10 @@
 import React from 'react';
 import { sample } from 'lodash';
 
-const Controls = ({ items, chooseItem, openNewItemModal }) => {
+const Controls = ({ items, choose, openNewItemModal }) => {
 	const onChoose = () => {
 		const chosenItem = sample(items.map(item => item.id));
-		chooseItem(chosenItem);
+		choose(chosenItem);
 	};
 	return (
 		<div className="controls">

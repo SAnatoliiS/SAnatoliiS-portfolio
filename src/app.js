@@ -13,5 +13,6 @@ const provider = (
 		<Main />
 	</Provider>
 );
+
 store.dispatch(startLoadItems());
 ReactDOM.render(provider, document.getElementById('app'));

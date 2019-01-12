@@ -1,15 +1,16 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-const ChosenItem = ({ chosenItem: { title, info }, unChoose }) => {
+const ChosenItem = ({ chosenItem: { title, info }, unChoose, isOpenModal }) => {
 	const onUnChoose = () => {
 		unChoose();
 	};
 	return (
 		<Modal
 			className="modal-common modal-common--chosen"
-			isOpen={!!title}
+			isOpen={isOpenModal}
 			onRequestClose={onUnChoose}
+			closeTimeoutMS={200}
 		>
 			<div className="modal__header">Chosen option</div>
 			<div className="modal__body">

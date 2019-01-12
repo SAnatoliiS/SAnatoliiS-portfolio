@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 import Controls from '../components/Controls.jsx';
-import { choose, unChoose } from '../actions/chosen';
-import { openNewItemModal } from '../actions/modals';
+import { choose } from '../actions/chosen';
+import { openNewItemModal, openChosenItemModal } from '../actions/modals';
 
 const mapStateToProps = ({ items }) => ({
 	items
 });
 
 const mapDispatchToProps = dispatch => ({
-	chooseItem: id => dispatch(choose(id)),
-	unChoose: () => dispatch(unChoose()),
+	choose: id => {
+		dispatch(choose(id));
+		dispatch(openChosenItemModal());
+	},
 	openNewItemModal: () => dispatch(openNewItemModal())
 });
 
