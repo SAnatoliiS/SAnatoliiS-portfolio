@@ -10,7 +10,8 @@
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev-server": "webpack-dev-server"
+		"dev-server": "webpack-dev-server --config webpack.dev.js",
+		"build": "webpack -p --config webpack.prod.js"
 	},
 	"dependencies": {
 		"@babel/polyfill": "^7.2.5",
@@ -32,8 +33,7 @@
 		"redux-thunk": "^2.3.0",
 		"sass-loader": "7.1.0",
 		"style-loader": "0.23.1",
-		"uuid": "^3.3.2",
-		"webpack": "4.28.3"
+		"uuid": "^3.3.2"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.2.3",
@@ -43,7 +43,11 @@
 		"@babel/preset-react": "^7.0.0",
 		"babel-loader": "^8.0.4",
 		"mini-css-extract-plugin": "^0.5.0",
+		"optimize-css-assets-webpack-plugin": "^5.0.1",
+		"uglifyjs-webpack-plugin": "^2.1.1",
+		"webpack": "4.28.3",
 		"webpack-cli": "^3.1.2",
-		"webpack-dev-server": "3.1.14"
+		"webpack-dev-server": "3.1.14",
+		"webpack-merge": "^4.2.1"
 	}
 }
